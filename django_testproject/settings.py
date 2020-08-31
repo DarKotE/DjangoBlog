@@ -154,8 +154,8 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = 'sl.Ag3ZmlVNJculDiZQy6hqsi1MXmGI1can7ZXWpzi8fXM_7PMppwH4OnJpZKh2tPNVmh5KXxeejol7AHmW2PwUYzUQznRnqAlFZieAdYDtk52hLw9yElC6E8kgs7gvnbAbVm-ejHOu'
-DROPBOX_ROOT_PATH = 'DJangoBlog_3'
+DROPBOX_OAUTH2_TOKEN = 'Dw5lP-408dMAAAAAAAAAATJ2xNnd22DvyCxRaH5IdKVj7iED2HsUfvdyW9dwm_-o'
+DROPBOX_ROOT_PATH = 'DjangoBlogg'
 DROPBOX_TIMEOUT = 100
 DROPBOX_WRITE_MODE = 'update'
 
