@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'o%vk2te2m(opdvfm4)pz6ejjr6gpt%gb01u4b^(6u#2=)v*)2+'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,21 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+
+# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_DJANGO_BUCKET')
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_DJANGO_KEY')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_DJANGO_SECRET')
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
+
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+
+# AWS_S3_REGION_NAME = "eu-north-1"
+
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DROPBOX_OAUTH2_TOKEN = 'SPFC_3VV_6UAAAAAAAAAAaCYTGoYp2asieZVChuZkVMgWqNoTsaP_Gv6Gs6BwGrH'
+DROPBOX_ROOT_PATH = 'Django_blog_testblog2/'
+DROPBOX_TIMEOUT = 100
+DROPBOX_WRITE_MODE = 'update'
