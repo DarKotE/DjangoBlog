@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG_VALUE')
 
 ALLOWED_HOSTS = [
     'djangoblogtesting.herokuapp.com'
@@ -155,7 +155,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = '6wSB4sLnOIYAAAAAAAAAAQibSh-t1tYuEqo08P7OJ_NUy3IhIO_Dt14-tv8fuOjr'
+DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_AUTH2')
 # DROPBOX_ROOT_PATH = ''
 DROPBOX_TIMEOUT = 100
 DROPBOX_WRITE_MODE = 'add'
